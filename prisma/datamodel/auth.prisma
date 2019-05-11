@@ -1,0 +1,7 @@
+type Auth {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  token: String! @unique
+  email: String! @unique
+}

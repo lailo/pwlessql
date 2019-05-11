@@ -1,0 +1,8 @@
+type Entity {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  text: String!
+  isPublic: Boolean @default(value: false)
+  createdBy: User! @relation(name: "EntityCreatedByUser")
+}

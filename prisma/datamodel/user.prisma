@@ -1,0 +1,9 @@
+type User {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  slug: String! @unique
+  name: String!
+  email: String! @unique
+  entities: [Entity!]! @relation(name: "EntityCreatedByUser", onDelete: CASCADE)
+}

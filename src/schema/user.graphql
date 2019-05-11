@@ -1,0 +1,40 @@
+# import * from 'entity.graphql'
+
+type Query {
+  user: User
+  profile(slug: String!): Profile
+}
+
+type Mutation {
+  updateUser(data: UserUpdateInput!): User!
+  deleteUser: User!
+}
+
+type Profile {
+  slug: String!
+  name: String!
+  profileImage: String!
+  entities: [Entity!]!
+}
+
+type CreatedByUser {
+  slug: String!
+  name: String!
+  profileImage: String!
+}
+
+type User {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  slug: String!
+  name: String!
+  email: String!
+  profileImage: String!
+  entities: [Entity!]!
+}
+
+input UserUpdateInput {
+  name: String
+  email: String
+}

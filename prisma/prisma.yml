@@ -1,0 +1,19 @@
+endpoint: PRISMA_URL_GOES_HERE
+
+datamodel:
+  - datamodel/user.prisma
+  - datamodel/entity.prisma
+  - datamodel/auth.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../generated/prisma-client
+  - generator: graphql-schema
+    output: ../generated/prisma-schema/schema.graphql
+
+hooks:
+  post-deploy:
+    - prisma generate
+
+seed:
+  run: node prisma/seed

@@ -1,0 +1,22 @@
+# import * from 'user.graphql'
+
+type Mutation {
+  signup(email: String!): AuthPayload
+  login(email: String!): AuthPayload
+  confirm(data: ConfirmInput): ConfirmPayload
+}
+
+type AuthPayload {
+  securityWord: String!
+  email: String!
+}
+
+type ConfirmPayload {
+  token: String
+  user: User
+}
+
+input ConfirmInput {
+  token: String!
+  email: String!
+}

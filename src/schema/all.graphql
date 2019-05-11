@@ -1,0 +1,3 @@
+# import  Query.*, Mutation.*, * from 'auth.graphql'
+# import  Query.*, Mutation.*, * from 'user.graphql'
+# import  Subscription.*, Query.*, Mutation.*, * from 'entity.graphql'

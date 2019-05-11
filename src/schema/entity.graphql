@@ -1,0 +1,42 @@
+# import * from 'user.graphql'
+
+type Query {
+  entity(id: ID!): Entity
+  discover(skip: Int, first: Int): Discover!
+}
+
+type Mutation {
+  createEntity(data: EntityCreateInput): Entity!
+  updateEntity(id: ID!, data: EntityUpdateInput): Entity!
+  deleteEntity(id: ID!): Entity!
+}
+
+type Subscription {
+  addEntity: Entity
+  updateEntity: Entity
+  removeEntity: Entity
+}
+
+type Entity {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  text: String!
+  isPublic: Boolean!
+  createdBy: CreatedByUser
+}
+
+type Discover {
+  entities: [Entity!]!
+  count: Int!
+}
+
+input EntityCreateInput {
+  text: String!
+  isPublic: Boolean!
+}
+
+input EntityUpdateInput {
+  text: String!
+  isPublic: Boolean!
+}
