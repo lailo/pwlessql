@@ -1,4 +1,4 @@
-# Passwordless Auth with GraphQLand Prisma
+# Passwordless Auth with GraphQL and Prisma
 
 Authenticate Users without the need for a password, forgot-password and reset-password.
 Less code, less emails and less users leaving because of forgoten passwords.
